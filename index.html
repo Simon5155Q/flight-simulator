@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="./movement.js"></script>
+</head>
+    <body>
+        <a-asset>
+            <a-asset-items id="plane" src="./assets/models/airplane/scene.gltf"></a-asset-items>
+            <a-asset-items id="terrain" src="./assets/models/terrain/scene.gltf"></a-asset-items>
+        </a-asset>
+        <a-scene>
+            <a-entity plane gltf-model="#plane" scale="0.8 0.8 0.8" rotation="0 90 0" position="0 0 -3"></a-entity>
+            <a-entity terrain gltf-model="#terrain" animation="property:position; from: 0 0 0; to: 0 0 400; easing: linear; dir:alternate; loop:true; dur: 20000"></a-entity>
+            <a-entity>
+                <a-camera ></a-camera>
+            </a-entity>
+        </a-scene>
+    </body>
+</html>
